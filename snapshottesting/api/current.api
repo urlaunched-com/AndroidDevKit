@@ -3,9 +3,15 @@ package com.urlaunched.android.snapshottesting {
 
   public abstract class BaseSnapshotTest {
     ctor public BaseSnapshotTest(optional app.cash.paparazzi.DeviceConfig deviceConfig, optional com.android.ide.common.rendering.api.SessionParams.RenderingMode renderingMode, optional boolean supportsDarkMode, optional boolean supportsLandscape, optional boolean supportsRtl);
+    method @org.junit.Rule public final com.urlaunched.android.snapshottesting.DefaultLocalRule getLocalRule();
     method @org.junit.Rule public app.cash.paparazzi.Paparazzi getPaparazzi();
     method public final void snapshot(optional com.urlaunched.android.design.ui.paging.LocalPagingModeEnum? pagingMode, kotlin.jvm.functions.Function0<kotlin.Unit> composable);
+    property @org.junit.Rule public final com.urlaunched.android.snapshottesting.DefaultLocalRule localRule;
     property @org.junit.Rule public app.cash.paparazzi.Paparazzi paparazzi;
+  }
+
+  public final class DefaultLocalRule extends org.junit.rules.TestWatcher {
+    ctor public DefaultLocalRule();
   }
 
 }

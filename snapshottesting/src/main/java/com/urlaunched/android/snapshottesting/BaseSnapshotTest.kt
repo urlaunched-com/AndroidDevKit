@@ -12,7 +12,6 @@ import com.android.resources.ScreenOrientation
 import com.urlaunched.android.design.ui.paging.LocalPagingMode
 import com.urlaunched.android.design.ui.paging.LocalPagingModeEnum
 import org.junit.Rule
-import java.util.Locale
 
 abstract class BaseSnapshotTest(
     private val deviceConfig: DeviceConfig = DeviceConfig.PIXEL_5,
@@ -21,9 +20,8 @@ abstract class BaseSnapshotTest(
     private val supportsLandscape: Boolean = false,
     private val supportsRtl: Boolean = false
 ) {
-    init {
-        Locale.setDefault(Locale.ENGLISH)
-    }
+    @get:Rule
+    val localRule = DefaultLocalRule()
 
     @get:Rule
     open val paparazzi =
