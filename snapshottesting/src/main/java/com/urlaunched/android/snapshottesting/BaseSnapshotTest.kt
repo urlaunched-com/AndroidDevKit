@@ -21,7 +21,7 @@ abstract class BaseSnapshotTest(
     private val supportsRtl: Boolean = false
 ) {
     @get:Rule
-    val localRule = DefaultLocalRule()
+    val localRule = DefaultLocaleRule()
 
     @get:Rule
     open val paparazzi =

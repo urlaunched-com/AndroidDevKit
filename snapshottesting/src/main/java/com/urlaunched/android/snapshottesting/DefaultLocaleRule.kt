@@ -6,7 +6,7 @@ import java.time.ZoneOffset
 import java.util.Locale
 import java.util.TimeZone
 
-class DefaultLocalRule : TestWatcher() {
+class DefaultLocaleRule : TestWatcher() {
     private val locale = Locale.getDefault()
     private val timeZone = TimeZone.getDefault()
 
